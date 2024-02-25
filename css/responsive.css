@@ -116,7 +116,8 @@ File Name: responsive.css
     }
     .navigation.navbar {
         float: right;
-        display: inherit !important;
+        display: flex;
+        justify-content: space-between;
         padding: 0;
         width: 100%;
     }
