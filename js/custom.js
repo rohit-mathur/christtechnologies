@@ -197,7 +197,7 @@ $(document).ready(function() {
       data: JSON.stringify(data),
       success: function(response) {
         console.log('Data sent successfully!');
-        window.location.reload();
+        window.location.href = window.location.href;
         // Handle successful response (e.g., display success message)
       },
       error: function(error) {
