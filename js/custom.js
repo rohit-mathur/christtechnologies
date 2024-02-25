@@ -172,5 +172,38 @@ $('.owl-carousel').owlCarousel({
   }
 })
 
+// Email sender
 
+$(document).ready(function() {
+  $('#request').submit(function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const number = $('#number').val();
+    const message = $('#message').val();
+
+    const data = {
+      name,
+      message,
+      email,
+      number
+    };
+
+    $.ajax({
+      url: 'https://qykulyzwvc.execute-api.us-east-1.amazonaws.com/prod/send-email',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      success: function(response) {
+        console.log('Data sent successfully!');
+        // Handle successful response (e.g., display success message)
+      },
+      error: function(error) {
+        console.error('Error sending data:', error.statusText);
+        // Handle error (e.g., display error message)
+      }
+    });
+  });
+});
 
