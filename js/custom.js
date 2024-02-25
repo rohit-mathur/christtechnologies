@@ -175,7 +175,7 @@ $('.owl-carousel').owlCarousel({
 // Email sender
 
 $(document).ready(function() {
-  $('#request').submit(function(event) {
+  $('#send').click(function(event) {
     event.preventDefault(); // Prevent default form submission
 
     const name = $('#name').val();
@@ -197,6 +197,7 @@ $(document).ready(function() {
       data: JSON.stringify(data),
       success: function(response) {
         console.log('Data sent successfully!');
+        window.location.reload();
         // Handle successful response (e.g., display success message)
       },
       error: function(error) {
