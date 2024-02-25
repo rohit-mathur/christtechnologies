@@ -187,10 +187,11 @@ File Name: responsive.css
     }
     .navigation.navbar {
         float: right;
-        display: inherit !important;
         padding: 0;
         width: 100%;
         margin-top: 0px;
+        display: flex;
+        justify-content: space-between;
     }
     .navigation .navbar-collapse {
         background: #323757;
